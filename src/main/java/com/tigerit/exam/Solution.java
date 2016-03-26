@@ -1,6 +1,11 @@
 package com.tigerit.exam;
 
 
+import com.tigerit.exam.io.InputReader;
+
+import java.io.File;
+import java.io.PrintWriter;
+
 import static com.tigerit.exam.IO.*;
 
 /**
@@ -12,7 +17,7 @@ import static com.tigerit.exam.IO.*;
 public class Solution implements Runnable {
     @Override
     public void run() {
-        // your application entry point
+/*        // your application entry point
 
         // sample input process
         String string = readLine();
@@ -21,6 +26,15 @@ public class Solution implements Runnable {
 
         // sample output process
         printLine(string);
-        printLine(integer);
+        printLine(integer);*/
+//        InputReader in = new InputReader(new File("input.txt"));
+        InputReader in = new InputReader(System.in);
+        PrintWriter out = new PrintWriter(System.out);
+        int testCase = in.nextInt();
+        for (int i = 1; i <= testCase; i++) {
+            Solver solution = new Solver();
+            solution.solve(i, in, out);
+        }
+        out.close();
     }
 }
